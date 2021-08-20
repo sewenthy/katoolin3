@@ -655,11 +655,12 @@ class APTManager:
         try:
             with open(self.sources_file, "w") as file:
                 file.write("# This file was automatically created by katoolin3. DO NOT MODIFY\n")
-                file.write("deb {} http://http.kali.org/kali kali-rolling main contrib non-free\n".format(arch))
+                file.write("deb {} https://http.kali.org/kali kali-rolling main contrib non-free\n".format(arch))
         except OSError as e:
             raise VisibleError() from e
 
         self.update()
+
         return self
 
     def __exit__(self, *nil):
